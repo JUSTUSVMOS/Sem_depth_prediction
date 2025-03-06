@@ -1,4 +1,8 @@
 # ResNet18-UNet Depth Estimation
+![image](https://github.com/user-attachments/assets/58988a92-ff9a-4173-a87a-b7fc4bf3a471)
+
+
+
 
 This repository provides an implementation for training a depth estimation model using a ResNet18-UNet architecture. The project is built on Python 3.9, CUDA 11.8, and PyTorch 2.0.0, and it includes tools for both training and fine-tuning the model.
 
@@ -13,6 +17,7 @@ This repository provides an implementation for training a depth estimation model
   - [NYU Depth V2 Format](#nyu-depth-v2-format)
   - [Nebula SEM Data Preparation](#nebula-sem-data-preparation)
   - [Blender File Preparation](#blender-file-preparation)
+- [Model Structure](#model-structure)
 - [Results](#results)
 - [License](#license)
 
@@ -105,15 +110,29 @@ Compress the dataset folder into a ZIP file to provide it for training.
 - Refer to the `Blender_code` folder for scripts and configurations used to generate synthetic depth maps.
 - Ensure that the Blender-generated images and their depth maps follow the required dataset format before use in training.
 
+## Model Structure
+
+The ResNet18-UNet model is designed for depth estimation, combining ResNet18 as the encoder and a UNet-based decoder. The encoder extracts deep features from the input image, while the decoder reconstructs depth information at a high resolution.
+
+### Model Architecture
+
+(*Insert a detailed description of the model architecture here, including layer configurations, feature extraction process, and upsampling techniques.*)
+
+### Model Diagram
+
+![image](https://github.com/user-attachments/assets/4b458fba-763e-45bd-8c5b-48d9ce62ad5f)
+
 ## Results
 
 After training or fine-tuning the model, save your results (such as sample predictions, comparison images, and evaluation metrics) in the `results/` folder. Example directory structure:
 
 ```
-![image](https://github.com/user-attachments/assets/2639d61c-29c2-4f34-a99c-097e478f8196)
-![image](https://github.com/user-attachments/assets/f84599e9-094b-47fc-bc98-5f71ed9661e6)
+results/
+├── sample_prediction1.png
+├── sample_prediction2.png
+├── evaluation_metrics.txt
+└── ...
 ```
-
 
 ## Acknowledgements
 
